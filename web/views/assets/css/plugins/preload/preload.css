@@ -1,0 +1,33 @@
+.preloadFalse{
+  opacity:0 !important;
+  height:0 !important;
+}
+
+.bg-preload {
+	position: relative;
+    background-color: #ced4da;
+    overflow: hidden;
+}
+
+.into-preload{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: 500%;
+    margin-left: -250%;
+    -webkit-animation: bgAnimation 0.8s linear infinite;
+    animation: bgAnimation 0.8s linear infinite;
+    background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 46%, hsla(0, 0%, 100%, 0.35) 50%, hsla(0, 0%, 100%, 0) 54%) 50% 50%;
+}
+
+@keyframes bgAnimation {
+    0% {
+        transform: translate3d(-30%, 0, 0);
+    }
+    to {
+        transform: translate3d(30%, 0, 0);
+    }
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-06-15T12:00:00.000Z" agent="Mozilla/5.0" version="21.6.1" type="device">
+  <diagram name="Payment Process Activity Diagram" id="payment_flow_detailed">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Start node -->
+        <mxCell id="start" value="" style="ellipse;fillColor=#000000;strokeColor=none;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="389" y="20" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Frontend Activities -->
+        <mxCell id="frontend_init" value="Usuario inicia checkout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="344" y="80" width="120" height="60" as="geometry"/>
+        </mxCell>
+        
+        <!-- Backend Activities -->
+        <mxCell id="backend_preference" value="Backend genera preferencia de pago" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="344" y="180" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MercadoPago Integration -->
+        <mxCell id="mp_create_preference" value="MercadoPago crea preferencia" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="344" y="280" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- User Redirection -->
+        <mxCell id="redirect_user" value="Redirección a MercadoPago" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="344" y="380" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Payment Process -->
+        <mxCell id="payment_process" value="Usuario realiza pago" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="344" y="480" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Decision Node -->
+        <mxCell id="payment_success" value="¿Pago exitoso?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="364" y="580" width="80" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Webhook Processing -->
+        <mxCell id="webhook_processing" value="Procesar webhook" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="344" y="700" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Database Update -->
+        <mxCell id="db_update" value="Actualizar estado en BD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="344" y="800" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- User Notification -->
+        <mxCell id="notify_user" value="Notificar al usuario" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="344" y="900" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Error Handling -->
+        <mxCell id="error_handling" value="Manejo de error" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="544" y="700" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- End Node -->
+        <mxCell id="end" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="389" y="1000" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="conn_1" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="start" target="frontend_init">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_2" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="frontend_init" target="backend_preference">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="backend_preference" target="mp_create_preference">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_4" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="mp_create_preference" target="redirect_user">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_5" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="redirect_user" target="payment_process">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_6" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="payment_process" target="payment_success">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_7" value="Sí" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="payment_success" target="webhook_processing">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_8" value="No" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="payment_success" target="error_handling">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_9" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="webhook_processing" target="db_update">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_10" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="db_update" target="notify_user">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_11" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="notify_user" target="end">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="conn_12" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="error_handling" target="notify_user">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="604" y="930"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
